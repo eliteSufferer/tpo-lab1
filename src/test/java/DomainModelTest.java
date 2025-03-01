@@ -99,7 +99,7 @@ class DomainModelTest {
         @DisplayName("Попытка повторного испарения")
         void doubleEvaporationAttempt() {
             event.triggerEvaporation(man);
-            event.triggerEvaporation(man); // Вторая попытка
+            event.triggerEvaporation(man);
 
             assertAll(
                     () -> assertEquals(EvaporationState.EVAPORATED, man.getState()),
@@ -114,6 +114,5 @@ class DomainModelTest {
     void evaporationCompositionTest() {
         event.triggerEvaporation(man);
         assertEquals(EvaporationState.EVAPORATED, man.getState());
-        // Здесь можно добавить проверки состава, если добавим соответствующую логику
     }
 }
